@@ -1,0 +1,39 @@
+.blog-container{
+    height: 300px;
+    width: 350px;
+    background-color: white;
+    box-shadow: 0 0 0 2px rgb(210, 209, 209);
+    text-align: center;
+    padding: 25px;
+    margin: 10px auto;
+}
+.details-blogs{   
+    margin-top: 20px;
+    padding: 0px 18px;
+}
+.details-blogs input{
+    margin: 8px 0px;
+    padding: 7px;
+    border: none;
+    border-bottom: 2px solid;
+}
+.file{
+    border: none !important
+}
+.details-blogs button{
+    width: 80px;
+    padding: 6px;
+    background-color: gray;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, .13), 0 1px 4px 0 rgba(0, 0, 0, .11);
+}
+.main-bloghead{
+    /* display: flex; */
+    justify-content: space-between;
+    /* background-color: cyan; */
+}
+.btn-logout{
+    margin-top: 20px;
+    margin-right: 130px;
+}

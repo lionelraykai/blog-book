@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { deleteComment, getBlogDetails } from "../API/endpoints";
-import { MdDelete } from "react-icons/md"; // Import MdDelete icon
+import { MdDelete } from "react-icons/md"; 
 import "../ComponentCSS/postDescription.css";
-// Import CSS for styling
+
 
 const PostDescription = () => {
   const { state } = useLocation();
@@ -22,12 +22,10 @@ const PostDescription = () => {
     getData();
   }, []);
 
-  // const handleDeleteComment = async (postId,commentId) => {
-  //   await deleteComment(postId,commentId)
-  //    getData()
-  // };
-const PostDescription = () => 
-  setPostData(res.data)
+  const handleDeleteComment = async (postId,commentId) => {
+    await deleteComment(postId,commentId)
+     getData()
+  };
   return (
     <div className="post-description-container">
       <h2 className="post-title">{postData.title}</h2>

@@ -33,7 +33,7 @@ const HeaderUpper = () => {
         >
           <img
             className="profile-img"
-            src={`http://localhost:8000/${userData.profilePhoto}`}
+            src={`https://blog-book1.onrender.com/${userData.profilePhoto}`}
             alt="profile-img"
           />
           <Link

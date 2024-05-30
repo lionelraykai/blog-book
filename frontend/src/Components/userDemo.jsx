@@ -54,7 +54,7 @@ const UserProfile = () => {
       <div className="profile-header">
         <img
           className="profile-image"
-          src={`https://blog-book-1.onrender.com/${userData.profilePhoto}`}
+          src={`${process.env.REACT_APP_API}/${userData.profilePhoto}`}
           alt="Profile"
         />
         {edit ? (

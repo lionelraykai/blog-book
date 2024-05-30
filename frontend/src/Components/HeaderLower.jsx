@@ -4,8 +4,10 @@ import { FaSearch } from "react-icons/fa";
 import { getFilteredPosts, getBlog, searchData } from "../API/endpoints";
 import { useDispatch, useSelector } from "react-redux";
 import { getPostForFilter, fetchFilteredPosts } from "../Redux/actions/post";
+import { useNavigate } from "react-router-dom";
 
 const HeaderLower = ({ setAllPosts }) => {
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const { postsForFilter } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
@@ -28,7 +30,7 @@ const HeaderLower = ({ setAllPosts }) => {
 
   useEffect(() => {
     fetchPosts();
-  },[]);
+  }, []);
   const handleSearch = async (searchText) => {
     const res = await searchData(searchText);
     setSearchPost(res.data);
@@ -99,7 +101,7 @@ const HeaderLower = ({ setAllPosts }) => {
         </div>
         <div
           style={{
-            backgroundColor: "white",
+            // backgroundColor: "white",
             position: "absolute",
             top: 30,
             marginTop: 20,
@@ -107,9 +109,19 @@ const HeaderLower = ({ setAllPosts }) => {
         >
           {searchPost.map((item) => {
             return (
-              <span style={{ color: "red", display: "block", width: "100%" }}>
+              <div
+                key={item._id}
+                className="post-item"
+                onClick={() =>
+                  navigate("/blogDetails", {
+                    state: {
+                      id: item._id,
+                    },
+                  })
+                }
+              >
                 {item.title}
-              </span>
+              </div>
             );
           })}
         </div>

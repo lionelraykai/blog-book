@@ -72,7 +72,7 @@ const Post = ({ post, currentDate, render, setRender }) => {
 
       <div className="post-image-container">
         <img
-          src={`https://blog-book1.onrender.com/${post.image}`}
+          src={`${process.env.REACT_APP_API}/${post.image}`}
           className="post-image"
           alt="Post Image"
         />
@@ -85,7 +85,7 @@ const Post = ({ post, currentDate, render, setRender }) => {
           <div className="user-details">
             <img
               className="profile-img"
-              src={`https://blog-book1.onrender.com/${post.image}`}
+              src={`${process.env.REACT_APP_API}/${post.image}`}
               alt="profile"
             />
 

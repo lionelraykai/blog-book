@@ -212,3 +212,102 @@ button {
 .increment-by-5:hover {
   background-color: #218838;
 }
+/* BlogDetails.css */
+
+.post-description-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-title {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.post-description {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-liked {
+  font-size: 1em;
+  color: #007bff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.comments-heading {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment-text {
+  font-size: 1em;
+  color: #555;
+}
+
+.delete-icon {
+  font-size: 20px;
+  color: #d9534f;
+  cursor: pointer;
+}
+
+.delete-icon:hover {
+  color: #c9302c;
+}
+/* styles.css */
+
+.post-item {
+  color: #333;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.post-item:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.post-item:active {
+  transform: translateY(0);
+}

@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { deleteComment, getBlogDetails } from "../API/endpoints";
-import { MdDelete } from "react-icons/md"; 
-import "../ComponentCSS/postDescription.css";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { getBlogDetails, deleteComment } from "../API/endpoints";
+import { MdDelete } from "react-icons/md";
 
-
-const PostDescription = () => {
+const BlogDetails = () => {
   const { state } = useLocation();
   const [postData, setPostData] = useState({});
 
@@ -22,10 +21,11 @@ const PostDescription = () => {
     getData();
   }, []);
 
-  const handleDeleteComment = async (postId,commentId) => {
-    await deleteComment(postId,commentId)
-     getData()
+  const handleDeleteComment = async (postId, commentId) => {
+    await deleteComment(postId, commentId);
+    getData();
   };
+
   return (
     <div className="post-description-container">
       <h2 className="post-title">{postData.title}</h2>
@@ -37,19 +37,24 @@ const PostDescription = () => {
           alt="Blog"
         />
       )}
-      <p className="post-liked">Liked: {postData.liked ? "Yes" : "No"}</p>
+      <p className="post-liked">
+        Liked:{" "}
+        {postData.liked ? (
+          <FaHeart className="like" style={{ color: "red" }} />
+        ) : (
+          <FaRegHeart className="like" style={{ color: "black" }} />
+        )}
+      </p>
       <h3 className="comments-heading">Comments:</h3>
       <div className="comments-list">
         {postData.comments &&
           postData.comments.map((comment) => (
-            <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-            <span key={comment._id} className="comment">
-              {comment.text}
+            <div key={comment._id} className="comment-container">
+              <span className="comment-text">{comment.text}</span>
               <MdDelete
-                style={{ fontSize: 20, cursor: "pointer" }}
-                onClick={() => handleDeleteComment(postData._id,comment._id)}
+                className="delete-icon"
+                onClick={() => handleDeleteComment(postData._id, comment._id)}
               />
-            </span>
             </div>
           ))}
       </div>
@@ -57,4 +62,4 @@ const PostDescription = () => {
   );
 };
 
-export default PostDescription;
+export default BlogDetails;

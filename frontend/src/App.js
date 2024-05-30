@@ -21,6 +21,7 @@ import "swiper/css";
 import Increment from "./Components/Increment";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
+import BlogDetails from "./Components/BlogDetails";
 
 function App1() {
   const location = useLocation();
@@ -70,6 +71,7 @@ function App1() {
         <Route path="/postDescription" element={<PostDescription />} />
         <Route path="/userProfile" element={<UserProfile />} />
         <Route path="/demo" element={<Increment />} />
+        <Route path="/blogDetails" element={<BlogDetails/>}/>
       </Routes>
       {!showCreateForm && <Footer />}
     </>

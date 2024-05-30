@@ -68,7 +68,7 @@ const UserProfile = () => {
         >
           <img
             style={{ width: "100%", height: "auto", objectFit: "cover" }}
-            src={`http://localhost:8000/${userData.profilePhoto}`}
+            src={`https://blog-book-1.onrender.com/${userData.profilePhoto}`}
             alt="Profile"
           />
         </div>
@@ -310,7 +310,7 @@ const UserProfile = () => {
                   <SwiperSlide key={index}>
                     <div style={{ display: "inline", borderRadius: 20 }}>
                       <img
-                        src={`http://localhost:8000/${item.image}`}
+                        src={`https://blog-book-1.onrender.com/${item.image}`}
                         style={{ objectFit: "contain" }}
                       ></img>
                     </div>

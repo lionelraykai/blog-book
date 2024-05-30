@@ -54,7 +54,7 @@ const UserProfile = () => {
       <div className="profile-header">
         <img
           className="profile-image"
-          src={`http://localhost:8000/${userData.profilePhoto}`}
+          src={`https://blog-book-1.onrender.com/${userData.profilePhoto}`}
           alt="Profile"
         />
         {edit ? (

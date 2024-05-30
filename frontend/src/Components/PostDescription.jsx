@@ -33,7 +33,7 @@ const PostDescription = () => {
       {postData.image && (
         <img
           className="post-image"
-          src={`http://localhost:8000/${postData.image}`}
+          src={`https://blog-book-1.onrender.com/${postData.image}`}
           alt="Blog"
         />
       )}
